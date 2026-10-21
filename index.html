@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8f5ef" />
+  <meta name="description" content="Thiệp mời lễ tốt nghiệp của Trần Thanh Trúc — Đại học Tôn Đức Thắng, ngày 23.10.2026." />
+  <title>Happy Graduation · Trần Thanh Trúc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .music-icon { display: inline-block; color: #8f211f; font-size: 19px; line-height: 1; }
+    .sound-toggle.is-playing .music-icon { animation: music-spin 1.2s linear infinite; }
+    @keyframes music-spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <div class="celebration-layer" aria-hidden="true">
+    <span class="falling-symbol symbol-one">✧</span><span class="falling-symbol symbol-two">✿</span>
+    <span class="falling-symbol symbol-three">✧</span><span class="falling-symbol symbol-four">✿</span>
+    <span class="falling-symbol symbol-five">✧</span><span class="falling-symbol symbol-six">✿</span>
+    <span class="falling-symbol symbol-seven">✧</span><span class="falling-symbol symbol-eight">✿</span>
+    <span class="falling-symbol symbol-nine">✧</span><span class="falling-symbol symbol-ten">✿</span>
+    <span class="falling-symbol symbol-eleven">✧</span><span class="falling-symbol symbol-twelve">✿</span>
+  </div>
+  <div class="floating-doodles" aria-hidden="true">
+    <span class="doodle star star-one">✦</span><span class="doodle star star-two">✧</span>
+    <span class="doodle heart-doodle">♡</span><span class="doodle flower">✿</span>
+  </div>
+  <header class="topbar">
+    <a class="monogram" href="#top" aria-label="Về đầu trang">ÉN<span>✦</span></a>
+    <button class="sound-toggle" id="musicToggle" type="button" aria-label="Phát hoặc tạm dừng nhạc" aria-pressed="false" title="Phát hoặc tạm dừng nhạc">
+      <span class="music-icon" aria-hidden="true">♫</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Thiệp mời tốt nghiệp">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" style="font-size: 10px;"><span></span> A NEW CHAPTER BEGINS <span></span></p>
+        <h1>Happy <em>Graduation</em></h1>
+        <p class="hero-subtitle">Một hành trình khép lại, một giấc mơ bắt đầu.</p>
+      </div>
+      <div class="poster-wrap reveal" id="posterWrap">
+        <div class="tape tape-left"></div><div class="tape tape-right"></div>
+        <img class="poster" src="assets/graduation-poster.png" alt="Thiệp mời tốt nghiệp Trần Thanh Trúc tại Đại học Tôn Đức Thắng" />
+        <button class="poster-hotspot hotspot-heart" type="button" aria-label="Thả tim cho tân cử nhân">♡</button>
+        <button class="poster-hotspot hotspot-star" type="button" aria-label="Tạo hiệu ứng lấp lánh">✦</button>
+        <div class="swing-ribbon" aria-hidden="true"><span></span><span></span></div>
+      </div>
+      <a class="scroll-cue" href="#countdown"><span></span> KÉO XUỐNG</a>
+    </section>
+
+    <section class="countdown-section section-shell" id="countdown">
+      <div class="section-heading reveal"><p class="eyebrow">SAVE THE DATE</p><h2>Đếm ngược đến <em>ngày đặc biệt</em></h2><p>Hẹn gặp bạn vào lúc 10:00 · Thứ Sáu, 23 tháng 10, 2026</p></div>
+      <div class="countdown" aria-label="Đếm ngược đến lễ tốt nghiệp">
+        <div class="time-card"><strong id="days">--</strong><span>Ngày</span></div><b class="colon">:</b>
+        <div class="time-card"><strong id="hours">--</strong><span>Giờ</span></div><b class="colon">:</b>
+        <div class="time-card"><strong id="minutes">--</strong><span>Phút</span></div><b class="colon">:</b>
+        <div class="time-card"><strong id="seconds">--</strong><span>Giây</span></div>
+      </div>
+      <p class="countdown-note" id="countdownNote">Mỗi giây đều đưa chúng ta gần hơn đến khoảnh khắc này.</p>
+    </section>
+
+    <section class="details-section section-shell" id="details">
+      <div class="section-heading reveal"><p class="eyebrow">THE LITTLE DETAILS</p><h2>Thông tin <em>buổi lễ</em></h2><p>Lịch trình, địa điểm và một lời nhắn nhỏ dành cho bạn.</p></div>
+      <div class="detail-grid">
+        <article class="detail-card detail-card-time reveal"><span class="card-number">01</span><div class="detail-icon">◷</div><p class="card-label">THỜI GIAN</p><h3>Thứ Sáu</h3><p class="date-line">23.10.2026</p><div class="session-times"><span>10:00</span><i>hoặc</i><span>14:30</span></div><span class="card-decoration">✧</span></article>
+        <article class="detail-card detail-card-highlight reveal"><span class="card-number">02</span><div class="detail-icon">⌖</div><p class="card-label">ĐỊA ĐIỂM</p><h3>Đại học<br class="desktop-break"> Tôn Đức Thắng</h3><p>19 Nguyễn Hữu Thọ, phường Tân Hưng</p><p>TP. Hồ Chí Minh</p><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+T%C3%B4n+%C4%90%E1%BB%A9c+Th%E1%BA%AFng+19+Nguy%E1%BB%85n+H%E1%BB%AFu+Th%E1%BB%8D" target="_blank" rel="noreferrer">Mở Google Maps <span>↗</span></a><span class="card-decoration">✦</span></article>
+        <article class="detail-card detail-card-message reveal"><span class="card-number">03</span><div class="detail-icon">♡</div><p class="card-label">LỜI NHẮN</p><h3>Sự hiện diện<br class="desktop-break"> của bạn</h3><p>là niềm vinh hạnh của mình.</p><p class="script-note">Cảm ơn vì đã cùng Trúc lưu giữ kỷ niệm!</p><span class="card-decoration">♡</span></article>
+      </div>
+    </section>
+
+    <section class="directions-section section-shell" id="directions">
+      <div class="section-heading reveal"><p class="eyebrow">HOW TO GET THERE</p><h2>Đường đến ngày <em>tốt nghiệp</em></h2><p>Đích đến: Đại học Tôn Đức Thắng · 19 Nguyễn Hữu Thọ, phường Tân Hưng, TP.HCM</p></div>
+      <div class="route-layout">
+        <div class="route-map route-map-campus reveal" role="img" aria-label="Sơ đồ trường Đại học Tôn Đức Thắng, điểm đến là Tòa A nơi làm lễ nhận bằng">
+          <div class="campus-road road-main">ĐƯỜNG NGUYỄN HỮU THỌ</div><div class="campus-road road-side">ĐƯỜNG D6</div>
+          <div class="campus-zone zone-a"><strong>TÒA A</strong><small>Làm lễ nhận bằng</small></div>
+          <div class="campus-zone zone-b">TÒA B</div><div class="campus-zone zone-f">TÒA F</div><div class="campus-zone zone-library">THƯ VIỆN</div>
+          <div class="campus-zone zone-sports">NHÀ THI ĐẤU</div><div class="campus-zone zone-field">SÂN THỂ THAO</div>
+          <svg class="route-line" viewBox="0 0 420 330" preserveAspectRatio="none" aria-hidden="true">
+            <path class="route-main" d="M63 284 L63 246 L112 226 L154 208 L178 174 L178 136 L153 113 L126 101"/>
+            <path class="route-secondary" d="M334 284 L311 258 L280 237 L245 214 L205 182 L178 136"/>
+            <circle cx="126" cy="101" r="8"/><circle cx="63" cy="284" r="6"/>
+          </svg>
+          <span class="map-pin pin-destination">✦ <small>Tòa A · Đích đến</small></span>
+          <div class="gate-list"><span class="gate gate-7">Cổng 7</span><span class="gate gate-9">Cổng 9</span><span class="gate gate-app">Cổng 1–5</span></div>
+          <div class="map-legend"><span><i class="legend-dot end-dot"></i> Tòa A · nơi nhận bằng</span><span><i class="legend-dot start-dot"></i> Các cổng vào</span></div>
+        </div>
+        <div class="route-info reveal"><div class="route-step"><span>01</span><div><h3>Đích đến: Tòa A</h3><p>Đây là nơi làm lễ nhận bằng của tân cử nhân theo sơ đồ bạn gửi. Hãy đi theo bảng chỉ dẫn trong khuôn viên để đến đúng sảnh.</p></div></div><div class="route-step">
+            <span>02</span><div><h3>Chọn cổng vào phù hợp</h3><p><strong>Xe máy:</strong> vào cổng 7 hoặc 9. <strong>Ô tô:</strong> vào cổng 9. <strong>Xe công nghệ:</strong> các cổng 1–5 đều được, ưu tiên cổng 1 hoặc 2 để đi bộ gần hơn.</p></div></div>
+
+      </div>
+    </section>
+
+    <section class="closing section-shell">
+      <div class="closing-photo-wrap reveal">
+        <div class="closing-photo-glow"></div>
+        <img class="closing-photo" src="assets/raw.png" alt="Trần Thanh Trúc trong lễ phục tốt nghiệp" />
+        <span class="closing-photo-sparkle">✧</span>
+      </div>
+      <div class="closing-message">
+        <div class="closing-flower">✿</div><p class="eyebrow">WITH LOVE,</p><h2>Trần Thanh Trúc</h2><p>Hẹn gặp bạn trong ngày đáng nhớ này!</p><div class="closing-line"></div><a href="#top" class="back-top">↑ Về đầu trang</a>
+      </div>
+    </section>
+  </main>
+  <footer>MADE BY BELL WITH ♡ FOR A NEW BEGINNING · 2026</footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <audio id="backgroundMusic" src="tet.mp3" autoplay loop preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
