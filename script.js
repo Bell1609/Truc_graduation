@@ -24,28 +24,61 @@
   document.querySelector('.hotspot-star').addEventListener('click', e => {const r=e.currentTarget.getBoundingClientRect();burst(['✦','✧','✷'],r.left+r.width/2,r.top+r.height/2);showToast('Lấp lánh như một khởi đầu mới ✨');});
   const musicToggle = document.getElementById('musicToggle');
   const backgroundMusic = document.getElementById('backgroundMusic');
-  backgroundMusic.play().then(() => {
-    musicToggle.classList.add('is-playing');
-    musicToggle.setAttribute('aria-pressed', 'true');
-  }).catch(() => {
-    // Browsers may require a user gesture before allowing audio playback.
+  let waitingForInteraction = false;
+
+  function setMusicState(isPlaying) {
+    musicToggle.classList.toggle('is-playing', isPlaying);
+    musicToggle.setAttribute('aria-pressed', String(isPlaying));
+  }
+
+  function enableMusic() {
+    backgroundMusic.muted = false;
+    return backgroundMusic.play().then(() => {
+      waitingForInteraction = false;
+      setMusicState(true);
+    });
+  }
+
+  function unlockMusic(event) {
+    if (!waitingForInteraction) return;
+    // The toggle handles its own click. Do not start playback on pointerdown,
+    // or that same click would immediately pause it again.
+    if (event.target === musicToggle || musicToggle.contains(event.target)) return;
+    enableMusic().catch(() => {
+      setMusicState(false);
+    });
+  }
+
+  enableMusic().catch(() => {
+    // Autoplay with sound is commonly blocked until the visitor interacts.
+    waitingForInteraction = true;
+    backgroundMusic.muted = true;
+    backgroundMusic.play().then(() => {
+      setMusicState(true);
+    }).catch(() => {
+      setMusicState(false);
+    });
   });
+
+  ['pointerdown', 'keydown', 'touchstart'].forEach(eventName => {
+    document.addEventListener(eventName, unlockMusic, {once: true, passive: true});
+  });
+
   musicToggle.addEventListener('click', async () => {
+    waitingForInteraction = false;
     if (backgroundMusic.paused) {
       try {
-        await backgroundMusic.play();
-        musicToggle.classList.add('is-playing');
-        musicToggle.setAttribute('aria-pressed', 'true');
+        await enableMusic();
         showToast('Đang phát nhạc Tết ♪');
       } catch {
+        setMusicState(false);
         showToast('Không thể phát nhạc. Vui lòng thử lại.');
       }
       return;
     }
 
     backgroundMusic.pause();
-    musicToggle.classList.remove('is-playing');
-    musicToggle.setAttribute('aria-pressed', 'false');
+    setMusicState(false);
     showToast('Đã tạm dừng nhạc.');
   });
 
